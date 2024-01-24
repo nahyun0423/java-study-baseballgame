@@ -13,7 +13,6 @@ public class Compare {
             countEquals(random, input, i);
             countStrike(random, input, i);
         }
-
         ball = count - strike;
     }
 
@@ -24,8 +23,16 @@ public class Compare {
     }
 
     public void countStrike(List<Integer> random, List<Integer> input, int i) {
-        if (random.get(i) == input.get(i)) {
+        if (random.get(i).equals(input.get(i))) {
             strike += 1;
         }
+    }
+
+    public int getStrike() {
+        return strike;
+    }
+
+    public int getBall() {
+        return ball;
     }
 }

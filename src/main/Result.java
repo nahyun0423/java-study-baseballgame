@@ -3,7 +3,10 @@ package main;
 public class Result {
     Compare compare = new Compare();
 
-    public String judgeResult (int ball, int strike) {
+    public String judgeResult() {
+        int ball = compare.getBall();
+        int strike = compare.getStrike();
+
         String ballStr = "";
         String strikeStr = "";
 
@@ -16,7 +19,6 @@ public class Result {
         if (strike > 0) {
             strikeStr = strike + "스트라이크";
         }
-
         return ballStr + strikeStr;
     }
 }
