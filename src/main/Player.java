@@ -5,10 +5,10 @@ import java.util.List;
 
 public class Player {
     public List<Integer> makeList(String input) {
-        List<Integer> list = new ArrayList<>();
+        List<Integer> playerList = new ArrayList<>();
         for (char i : input.toCharArray()) {
-            list.add(Character.getNumericValue(i));
+            playerList.add(Character.getNumericValue(i));
         }
-        return list;
+        return playerList;
     }
 }

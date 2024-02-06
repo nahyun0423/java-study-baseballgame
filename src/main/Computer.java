@@ -34,9 +34,12 @@ public class Computer {
                 ball++;
             }
         }
-
         boolean gameOver = (strike == 3);
 
         return new GameResult(strike, ball, gameOver);
+    }
+
+    public List<Integer> getRandomNumber() {
+        return randomNumber;
     }
 }

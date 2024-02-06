@@ -16,6 +16,6 @@ public class GameResult {
     }
 
     public String getResultString() {
-        return strike + " 스트라이크, " + ball + " 볼";
+        return strike + " 스트라이크 " + ball + " 볼";
     }
 }

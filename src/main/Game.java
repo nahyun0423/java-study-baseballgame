@@ -8,7 +8,6 @@ public class Game {
     private Computer computer;
     private Scanner scanner;
 
-
     public Game() {
         this.player = new Player();
         this.computer = new Computer();
@@ -22,7 +21,6 @@ public class Game {
             playGame();
             System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
         } while (scanner.nextInt() == 1);
-
         endGame();
     }
 
