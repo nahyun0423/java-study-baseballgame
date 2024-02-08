@@ -18,4 +18,12 @@ public class GameResult {
     public String getResultString() {
         return strike + " 스트라이크 " + ball + " 볼";
     }
+
+    public int getStrike() {
+        return strike;
+    }
+
+    public int getBall() {
+        return ball;
+    }
 }

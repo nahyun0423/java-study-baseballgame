@@ -42,4 +42,8 @@ public class Computer {
     public List<Integer> getRandomNumber() {
         return randomNumber;
     }
+
+    public void setRandomNumber(List<Integer> randomNumber) {
+        this.randomNumber = randomNumber;
+    }
 }
