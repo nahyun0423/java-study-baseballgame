@@ -1,48 +1,41 @@
 package main;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class Game {
-    private Player player;
-    private Computer computer;
-    private Scanner scanner;
+    Compare compare = new Compare();
 
-    public Game() {
-        this.player = new Player();
-        this.computer = new Computer();
-        this.scanner = new Scanner(System.in);
-    }
+    public void playGame() {
+        Number number = new Number();
 
-    public void startGame() {
-        System.out.println("숫자 야구 게임을 시작합니다!");
+        System.out.println("게임을 시작합니다");
+        number.createRandomNum();
 
-        do {
-            playGame();
-            System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
-        } while (scanner.nextInt() == 1);
+        while (!isGameOver()) {
+            System.out.println("세자리 숫자를 입력하세요");
+            number.inputPlayerNum();
+            compare.printResult(compare.getSameAmount(), compare.getSamePositionAmount());
+        }
         endGame();
     }
 
-    private void playGame() {
-        computer.generateRandomNumber();
-
-        while (true) {
-            System.out.println("세자리 숫자를 입력해주세요");
-            List<Integer> playerInput = player.makeList(scanner.next());
-            GameResult result = computer.compare(playerInput);
-            System.out.println(result.getResultString());
-
-            if (result.isGameOver()) {
-                System.out.println("게임 종료");
-                break;
-            }
+    public void endGame() {
+        System.out.println("재시작하려면 1, 종료하려면 2를 입력하세요");
+        Scanner scanner = new Scanner(System.in);
+        int input = scanner.nextInt();
+        if (input == 1) {
+            playGame();
+        }
+        if (input == 2) {
+            System.out.println("게임을 종료합니다.");
         }
     }
 
-    private void endGame() {
-        System.out.println("게임을 종료합니다. 감사합니다.");
-        scanner.close();
+    public boolean isGameOver() {
+        if (compare.getSamePositionAmount() == 3) {
+            System.out.println("축하합니다 성공입니다.");
+            return true;
+        }
+        return false;
     }
 }
-
