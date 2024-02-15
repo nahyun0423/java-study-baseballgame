@@ -35,7 +35,6 @@ public class BallsTest {
                     .get(i)
                     .getPosition();
         }
-
         assertThat(arr[0]).isEqualTo(1);
         assertThat(arr[1]).isEqualTo(2);
         assertThat(arr[2]).isEqualTo(3);
