@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="baseball.BallsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-15T19:53:15" hostname="DESKTOP-0NU5H36" time="0.06">
+  <properties/>
+  <testcase name="Balls_순서_검증" classname="baseball.BallsTest" time="0.06"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
