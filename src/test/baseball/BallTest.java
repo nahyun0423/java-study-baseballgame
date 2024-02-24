@@ -8,8 +8,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class BallTest {
     private Ball com;
-    private BallStatus ballStatus;
-
 
     @BeforeEach
     void setup() {
@@ -19,7 +17,7 @@ public class BallTest {
     @Test
     void nothing() {
         BallStatus status = com.play(new Ball(2, 5));
-        assertThat(status).isEqualTo(ballStatus.NOTHING);
+        assertThat(status).isEqualTo(NOTHING);
     }
 
     @Test

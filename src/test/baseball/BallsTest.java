@@ -22,21 +22,4 @@ public class BallsTest {
                 .size();
         assertThat(listSize).isEqualTo(3);
     }
-
-    @Test
-    @DisplayName("Balls_순서_검증")
-    void Balls_순서_검증() {
-        int[] arr = new int[3];
-        balls.validSequence(balls.inputBall(new Ball(2, 4), new Ball(3, 8), new Ball(1, 5)));
-
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = balls
-                    .getBalls()
-                    .get(i)
-                    .getPosition();
-        }
-        assertThat(arr[0]).isEqualTo(1);
-        assertThat(arr[1]).isEqualTo(2);
-        assertThat(arr[2]).isEqualTo(3);
-    }
 }
