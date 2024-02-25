@@ -25,10 +25,6 @@ public class Ball {
         return this.ballNo == ballNo;
     }
 
-    public int getPosition(){
-        return position;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

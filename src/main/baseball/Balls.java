@@ -1,7 +1,6 @@
 package baseball;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Balls {
@@ -18,7 +17,12 @@ public class Balls {
         return balls;
     }
 
-    public List<Ball> getBalls() {
+    public List<Ball> makeBalls(List<Integer> list) {
+        Ball first = new Ball(1, list.get(0));
+        Ball second = new Ball(2, list.get(1));
+        Ball third = new Ball(3, list.get(2));
+
+        inputBall(first, second, third);
         return balls;
     }
 }
