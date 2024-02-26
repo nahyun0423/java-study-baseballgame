@@ -6,6 +6,8 @@ import static baseball.RandomBall.SIZE;
 
 public class Result {
     Balls balls = new Balls();
+    private Result result;
+
     private int ball = 0;
     private int strike = 0;
 
@@ -14,21 +16,38 @@ public class Result {
         this.strike = strike;
     }
 
-    public void makeResult(List<Integer> player, List<Integer> random) {
+    public String compare(List<Integer> player, List<Integer> random) {
         for (int i = 0; i < SIZE; i++) {
             Ball playerBall = balls.makeBalls(player).get(i);
             Ball randomBall = balls.makeBalls(random).get(i);
             BallStatus status = playerBall.play(randomBall);
-            compare(status);
+            makeResult(status);
+        }
+        return resultView(result);
+    }
+
+    public void makeResult(BallStatus status) {
+        if (status.equals(BallStatus.STRIKE)) {
+            this.ball++;
+        }
+        if (status.equals(BallStatus.BALL)) {
+            this.strike++;
         }
     }
 
-    public void compare(BallStatus status) {
-        if (status.equals(BallStatus.STRIKE)) {
-            ball++;
+    public String resultView(Result result) {
+        String resultStr = "";
+
+        if (strike > 0) {
+            resultStr += strike + "스트라이크 ";
         }
-        if (status.equals(BallStatus.BALL)) {
-            strike++;
+        if (ball > 0) {
+            resultStr += ball + "볼";
         }
+        if (strike == 0 || ball == 0 ) {
+            resultStr += "낫싱";
+        }
+
+        return resultStr;
     }
 }

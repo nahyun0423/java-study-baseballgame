@@ -10,8 +10,10 @@ public class Input {
 
     public List<Integer> inputBall() {
         System.out.print("세자리 수 입력 : ");
+
         int input = scanner.nextInt();
         int length = (int) (Math.log10(input) + 1);
+
         playerList = Arrays.asList(input / 100, input % 100 / 10, input % 10);
 
         if (ValidationUtils.hasDuplicate(playerList) == true) {
