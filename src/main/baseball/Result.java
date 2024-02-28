@@ -20,6 +20,7 @@ public class Result {
         for (int i = 0; i < SIZE; i++) {
             Ball playerBall = balls.makeBalls(player).get(i);
             Ball randomBall = balls.makeBalls(random).get(i);
+
             BallStatus status = playerBall.play(randomBall);
             makeResult(status);
         }
@@ -47,7 +48,6 @@ public class Result {
         if (strike == 0 || ball == 0 ) {
             resultStr += "낫싱";
         }
-
         return resultStr;
     }
 }

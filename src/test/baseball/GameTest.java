@@ -6,25 +6,14 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class GameTest {
+    private Game game = new Game();
 
     @Test
-    @DisplayName("3스트라이크_성공")
-    void 3스트라이크_성공(){
-        assertThat(Game.isGameOver(3)).isTrue();
-        assertThat(Game.isGameOver(2)).isFalse();
-        assertThat(Game.isGameOver(1)).isFalse();
-    }
-
-    @Test
-    @DisplayName("게임_다시_시작")
-    void 게임_다시_시작(){
-
-    }
-
-
-    @Test
-    @DisplayName("게임_종료")
-    void 게임_종료(){
-
+    @DisplayName(value = "three스트라이크_성공")
+    void three스트라이크_성공() {
+        assertThat(game.isGameOver("3스트라이크 ")).isTrue();
+        assertThat(game.isGameOver("1스트라이크 1볼")).isFalse();
+        assertThat(game.isGameOver("3스트라이크 2볼")).isFalse();
+        assertThat(game.isGameOver("낫싱")).isFalse();
     }
 }

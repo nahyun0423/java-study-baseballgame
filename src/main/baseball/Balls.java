@@ -18,11 +18,13 @@ public class Balls {
     }
 
     public List<Ball> makeBalls(List<Integer> list) {
-        Ball first = new Ball(1, list.get(0));
-        Ball second = new Ball(2, list.get(1));
-        Ball third = new Ball(3, list.get(2));
-
-        inputBall(first, second, third);
+        if (list.size() != 0) {
+            Ball first = new Ball(1, list.get(0));
+            Ball second = new Ball(2, list.get(1));
+            Ball third = new Ball(3, list.get(2));
+            inputBall(first, second, third);
+            return balls;
+        }
         return balls;
     }
 }
