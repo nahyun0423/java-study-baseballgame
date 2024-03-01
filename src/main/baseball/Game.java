@@ -25,6 +25,7 @@ public class Game {
 
             System.out.println(result.compare(player, com));
         }
+        closeGame();
     }
 
     public void closeGame() {
@@ -38,7 +39,7 @@ public class Game {
     }
 
     public boolean isGameOver(String resultStr) {
-        if (result.compare(player, com).equals("3스트라이크 ")) {
+        if (resultStr.equals("3스트라이크 ")) {
             return true;
         }
         return false;

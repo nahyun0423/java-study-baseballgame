@@ -5,11 +5,10 @@ import java.util.List;
 import static baseball.RandomBall.SIZE;
 
 public class Result {
-    Balls balls = new Balls();
-    private Result result;
-
+    private Balls balls = new Balls();
     private int ball = 0;
     private int strike = 0;
+    private Result result;
 
     public Result(int ball, int strike) {
         this.ball = ball;
@@ -17,9 +16,13 @@ public class Result {
     }
 
     public String compare(List<Integer> player, List<Integer> random) {
+        List<Ball> playerBalls = balls.createBalls(player);
+        List<Ball> randomBalls = balls.createBalls(random);
+        result = new Result(0,0);
+
         for (int i = 0; i < SIZE; i++) {
-            Ball playerBall = balls.makeBalls(player).get(i);
-            Ball randomBall = balls.makeBalls(random).get(i);
+            Ball playerBall = playerBalls.get(i);
+            Ball randomBall = randomBalls.get(i);
 
             BallStatus status = playerBall.play(randomBall);
             makeResult(status);
@@ -29,23 +32,23 @@ public class Result {
 
     public void makeResult(BallStatus status) {
         if (status.equals(BallStatus.STRIKE)) {
-            this.ball++;
+            result.ball++;
         }
         if (status.equals(BallStatus.BALL)) {
-            this.strike++;
+            result.strike++;
         }
     }
 
     public String resultView(Result result) {
         String resultStr = "";
 
-        if (strike > 0) {
-            resultStr += strike + "스트라이크 ";
+        if (result.strike > 0) {
+            resultStr += result.strike + "스트라이크 ";
         }
-        if (ball > 0) {
-            resultStr += ball + "볼";
+        if (result.ball > 0) {
+            resultStr += result.ball + "볼";
         }
-        if (strike == 0 || ball == 0 ) {
+        if (result.strike == 0 && result.ball == 0) {
             resultStr += "낫싱";
         }
         return resultStr;
