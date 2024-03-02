@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb1ea5a2-1ee0-444a-8ce5-06c80daaaf6a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/baseball/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/baseball/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/baseball/RandomBall.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/baseball/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/baseball/InputTest.java" afterDir="false" />
+    <list default="true" id="eb1ea5a2-1ee0-444a-8ce5-06c80daaaf6a" name="Changes" comment="chore : Balls, Result 클래스 수정">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/baseball/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/baseball/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/baseball/Balls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/baseball/Balls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/baseball/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/baseball/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +65,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -80,6 +83,93 @@
       <recent name="" />
     </key>
   </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="baseball.Main" />
+      <module name="java-study-baseballgame2.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="baseball.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-study-baseballgame2.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="baseball.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="baseball" />
+      <option name="MAIN_CLASS_NAME" value="baseball.GameTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest.three스트라이크_성공" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-study-baseballgame2.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="baseball.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="baseball" />
+      <option name="MAIN_CLASS_NAME" value="baseball.GameTest" />
+      <option name="METHOD_NAME" value="three스트라이크_성공" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InputTest.입력값_테스트" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-study-baseballgame2.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="baseball.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="baseball" />
+      <option name="MAIN_CLASS_NAME" value="baseball.InputTest" />
+      <option name="METHOD_NAME" value="입력값_테스트" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InputTest.testInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-study-baseballgame2.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="baseball.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="baseball" />
+      <option name="MAIN_CLASS_NAME" value="baseball.InputTest" />
+      <option name="METHOD_NAME" value="testInput" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.GameTest" />
+        <item itemvalue="JUnit.GameTest.three스트라이크_성공" />
+        <item itemvalue="JUnit.InputTest.입력값_테스트" />
+        <item itemvalue="JUnit.InputTest.testInput" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -89,7 +179,12 @@
       <option name="presentableId" value="Default" />
       <updated>1708775096892</updated>
       <workItem from="1708775097884" duration="6426000" />
-      <workItem from="1708819323920" duration="6916000" />
+      <workItem from="1708819323920" duration="7776000" />
+      <workItem from="1708928766409" duration="5696000" />
+      <workItem from="1709126138789" duration="8553000" />
+      <workItem from="1709246148676" duration="1011000" />
+      <workItem from="1709247181190" duration="8121000" />
+      <workItem from="1709359558660" duration="3526000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1708777736137</created>
@@ -98,7 +193,28 @@
       <option name="project" value="LOCAL" />
       <updated>1708777736137</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat : Input, RandomBall, Result 클래스 추가">
+      <created>1708826313361</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708826313361</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat : InputTest 클래스 추가 및 전체 수정">
+      <created>1709136694514</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709136694514</updated>
+    </task>
+    <task id="LOCAL-00004" summary="chore : Balls, Result 클래스 수정">
+      <created>1709251660045</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709251660045</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +222,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="feat : Input, RandomBall, Result 클래스 추가" />
+    <MESSAGE value="feat : InputTest 클래스 추가 및 전체 수정" />
+    <MESSAGE value="chore : Balls, Result 클래스 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore : Balls, Result 클래스 수정" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StackOverflowError" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

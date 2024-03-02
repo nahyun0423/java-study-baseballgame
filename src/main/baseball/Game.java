@@ -30,8 +30,7 @@ public class Game {
 
     public void closeGame() {
         System.out.println("게임을 종료하려면 1, 재시작하려면 2를 입력하세요");
-        Scanner scan = new Scanner(System.in);
-        int data = scan.nextInt();
+        int data = scanner.nextInt();
 
         if (data == 2) {
             playGame();
