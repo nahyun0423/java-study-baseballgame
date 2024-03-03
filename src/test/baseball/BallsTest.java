@@ -17,11 +17,10 @@ public class BallsTest {
         Ball ball2 = new Ball(2,4);
         Ball ball3 = new Ball(3,8);
 
-        List<Ball> list = balls.makeBalls(ball1, ball2, ball3);
+        List<Ball> list = balls.makeBallsList(ball1, ball2, ball3);
 
         assertThat(list.get(0)).isEqualTo(ball1);
         assertThat(list.get(1)).isEqualTo(ball2);
         assertThat(list.get(2)).isEqualTo(ball3);
     }
 }
-
