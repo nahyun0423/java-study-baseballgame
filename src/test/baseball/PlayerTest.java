@@ -7,21 +7,17 @@ import java.util.List;
 
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.in;
 
 public class PlayerTest {
     private Player player = new Player();
 
     @Test
-    @DisplayName("입력문자열_분리")
-    void 입력문자열_List로_분리() {
-        String input = "123";
-
-        List<Integer> list = player.splitStr(input);
-
-        assertThat(list.get(0)).isEqualTo(1);
-        assertThat(list.get(1)).isEqualTo(2);
-        assertThat(list.get(2)).isEqualTo(3);
+    @DisplayName("숫자_1_9_검증")
+    void 숫자_1_9_검증() {
+        assertThat(player.validNo(9)).isTrue();
+        assertThat(player.validNo(1)).isTrue();
+        assertThat(player.validNo(0)).isFalse();
+        assertThat(player.validNo(10)).isFalse();
     }
 
     @Test
@@ -30,7 +26,7 @@ public class PlayerTest {
         List<Integer> noDuplist = asList(1, 2, 3);
         List<Integer> dupList = asList(2,3,2);
 
-        assertThat(player.hasDuplicate(noDuplist)).isFalse;
-        assertThat(player.hasDuplicate(dupList)).isTrue;
+        assertThat(player.hasDuplicate(noDuplist)).isFalse();
+        assertThat(player.hasDuplicate(dupList)).isTrue();
     }
 }
