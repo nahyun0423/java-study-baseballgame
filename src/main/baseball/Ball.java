@@ -1,5 +1,7 @@
 package baseball;
 
+import java.util.Objects;
+
 public class Ball {
     int position;
     int ballNo;
@@ -19,5 +21,10 @@ public class Ball {
         }
         Ball other = (Ball) obj;
         return this.position == other.position && this.ballNo == other.ballNo;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(position, ballNo);
     }
 }

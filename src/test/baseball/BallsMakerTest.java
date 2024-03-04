@@ -8,8 +8,8 @@ import java.util.List;
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class BallMakerTest {
-    private BallMaker bm = new BallMaker();
+public class BallsMakerTest {
+    private BallsMaker bm = new BallsMaker();
     @Test
     @DisplayName("입력문자열_분리")
     void 입력문자열_List로_분리() {

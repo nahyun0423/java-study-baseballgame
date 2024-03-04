@@ -3,7 +3,7 @@ package baseball;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BallMaker {
+public class BallsMaker {
     private Balls balls = new Balls();
 
     public List<Integer> splitStr(String input) {
@@ -22,7 +22,6 @@ public class BallMaker {
         for (int i = 0; i < inputList.size(); i++) {
             ball[i] = new Ball(i + 1, inputList.get(i));
         }
-
         return balls.makeBallsList(ball[0], ball[1], ball[2]);
     }
 }

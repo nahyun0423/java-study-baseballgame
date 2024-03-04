@@ -14,7 +14,7 @@ public class RandomTest {
     @DisplayName("랜덤숫자_사이즈_검증")
     void 랜덤숫자_사이즈_검증(){
         List<Integer> randomNum = random.generateRandom();
-
+        System.out.println(randomNum);
         assertThat(randomNum.size()).isEqualTo(3);
     }
 }

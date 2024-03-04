@@ -10,7 +10,6 @@ public class Balls {
         ballsList.add(ball1);
         ballsList.add(ball2);
         ballsList.add(ball3);
-
         return ballsList;
     }
 }
