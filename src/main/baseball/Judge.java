@@ -19,37 +19,35 @@ public class Judge {
 
     public JudgeStatus judgeBall(Ball ball1, Ball ball2) {
         if (ball1.equals(ball2)) {
-            countStrike++;
             return JudgeStatus.STRIKE;
         }
-        if (ball1.ballNo == ball2.ballNo) {
-            countBall++;
+        if (ball1.getBallNo() == ball2.getBallNo()) {
             return JudgeStatus.BALL;
         }
         return JudgeStatus.NOTHING;
     }
 
-    public Judge judgeBalls(List<Ball> balls1, List<Ball> balls2) {
-        IntStream.range(0, SIZE)
-                .forEach(i -> {
-                    JudgeStatus result = judgeBall(balls1.get(0), balls2.get(i));
-                    this.countStrike += (result == JudgeStatus.STRIKE) ? 1 : 0;
-                    this.countBall += (result == JudgeStatus.BALL) ? 1 : 0;
-                });
-
-        IntStream.range(0, SIZE)
-                .forEach(i -> {
-                    JudgeStatus result = judgeBall(balls1.get(1), balls2.get(i));
-                    this.countStrike += (result == JudgeStatus.STRIKE) ? 1 : 0;
-                    this.countBall += (result == JudgeStatus.BALL) ? 1 : 0;
-                });
-
-        IntStream.range(0, SIZE)
-                .forEach(i -> {
-                    JudgeStatus result = judgeBall(balls1.get(2), balls2.get(i));
-                    this.countStrike += (result == JudgeStatus.STRIKE) ? 1 : 0;
-                    this.countBall += (result == JudgeStatus.BALL) ? 1 : 0;
-                });
+    public Judge result(List<Ball> balls1, List<Ball> balls2) {
+        for (int j = 0; j < SIZE; j++) {
+            judgeBalls(balls1, balls2, j);
+        }
         return new Judge(countStrike, countBall);
+    }
+
+    public void judgeBalls(List<Ball> balls1, List<Ball> balls2, int j) {
+        IntStream.range(0, SIZE)
+                .forEach(i -> {
+                    JudgeStatus result = judgeBall(balls1.get(j), balls2.get(i));
+                    this.countStrike += (result == JudgeStatus.STRIKE) ? 1 : 0;
+                    this.countBall += (result == JudgeStatus.BALL) ? 1 : 0;
+                });
+    }
+
+    public int getCountBall() {
+        return countBall;
+    }
+
+    public int getCountStrike() {
+        return countStrike;
     }
 }

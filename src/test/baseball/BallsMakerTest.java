@@ -9,13 +9,13 @@ import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class BallsMakerTest {
-    private BallsMaker bm = new BallsMaker();
+    private BallsMaker ballsMaker = new BallsMaker();
     @Test
     @DisplayName("입력문자열_분리")
     void 입력문자열_List로_분리() {
         String input = "423";
 
-        List<Integer> list = bm.splitStr(input);
+        List<Integer> list = ballsMaker.splitStr(input);
 
         assertThat(list.get(0)).isEqualTo(4);
         assertThat(list.get(1)).isEqualTo(2);
@@ -31,7 +31,7 @@ public class BallsMakerTest {
         Ball expected2 = new Ball(2, 4);
         Ball expected3 = new Ball(3, 8);
 
-        List<Ball> balls = bm.integerToBall(list);
+        List<Ball> balls = ballsMaker.integerToBall(list);
 
         assertThat(balls.get(0)).isEqualTo(expected1);
         assertThat(balls.get(1)).isEqualTo(expected2);

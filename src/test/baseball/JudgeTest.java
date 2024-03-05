@@ -45,8 +45,9 @@ public class JudgeTest {
             balls2.add(new Ball(i, i + 1)); // 1,2,3
         }
 
-        Judge judge1 = judge.judgeBalls(balls1, balls2);
+        Judge judge1 = judge.result(balls1, balls2);
 
-        assertThat(judge1).isEqualTo("2볼");
+        assertThat(judge1.getCountBall()).isEqualTo(2);
+        assertThat(judge1.getCountStrike()).isEqualTo(0);
     }
 }

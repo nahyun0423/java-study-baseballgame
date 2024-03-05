@@ -1,19 +1,17 @@
 package baseball;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BallsMaker {
     private Balls balls = new Balls();
 
     public List<Integer> splitStr(String input) {
-        String[] inputNum = input.split("");
-        List<Integer> inputList = new ArrayList<>();
-
-        for (String str : inputNum) {
-            inputList.add(Integer.valueOf(str));
-        }
-        return inputList;
+        return Arrays.stream(input.split(""))
+                .map(Integer::valueOf)
+                .collect(Collectors.toList());
     }
 
     public List<Ball> integerToBall(List<Integer> inputList) {
