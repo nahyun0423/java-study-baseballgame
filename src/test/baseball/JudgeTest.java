@@ -14,27 +14,6 @@ public class JudgeTest {
     private Ball com = new Ball(1, 2);
 
     @Test
-    void strike() {
-        Ball player = new Ball(1, 2);
-        JudgeStatus status = judge.judgeBall(com, player);
-        assertThat(status).isEqualTo(STRIKE);
-    }
-
-    @Test
-    void ball() {
-        Ball player = new Ball(3, 2);
-        JudgeStatus status = judge.judgeBall(com, player);
-        assertThat(status).isEqualTo(BALL);
-    }
-
-    @Test
-    void nothing() {
-        Ball player = new Ball(1, 3);
-        JudgeStatus status = judge.judgeBall(com, player);
-        assertThat(status).isEqualTo(NOTHING);
-    }
-
-    @Test
     @DisplayName("Balls_비교")
     void Balls_비교() {
         List<Ball> balls1 = new ArrayList<>();

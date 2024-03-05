@@ -14,7 +14,7 @@ public class Random {
             randomSet.add((int) (Math.random() * SIZE) + 1);
         }
         ArrayList<Integer> randomBall = new ArrayList<>(randomSet);
-
+        randomSet.clear();
         return randomBall;
     }
 }

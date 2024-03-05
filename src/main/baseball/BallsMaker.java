@@ -1,6 +1,5 @@
 package baseball;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,11 +14,10 @@ public class BallsMaker {
     }
 
     public List<Ball> integerToBall(List<Integer> inputList) {
-        Ball[] ball = new Ball[inputList.size()];
-
-        for (int i = 0; i < inputList.size(); i++) {
-            ball[i] = new Ball(i + 1, inputList.get(i));
-        }
-        return balls.makeBallsList(ball[0], ball[1], ball[2]);
+        return balls.makeBallsList(
+                new Ball(1, inputList.get(0)),
+                new Ball(2, inputList.get(1)),
+                new Ball(3, inputList.get(2))
+        );
     }
 }
