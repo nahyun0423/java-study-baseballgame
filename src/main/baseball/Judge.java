@@ -22,20 +22,19 @@ public class Judge {
         return JudgeStatus.NOTHING;
     }
 
-    public Judge result(List<Ball> balls1, List<Ball> balls2) {
-        Judge judge = new Judge(0,0);
+    public Judge countResult(List<Ball> balls1, List<Ball> balls2) {
         for (int j = 0; j < Random.SIZE; j++) {
-            judgeBalls(balls1, balls2, j, judge);
+            judgeBalls(balls1, balls2, j);
         }
-        return judge;
+        return this;
     }
 
-    public void judgeBalls(List<Ball> balls1, List<Ball> balls2, int j, Judge judge) {
+    public void judgeBalls(List<Ball> balls1, List<Ball> balls2, int j) {
         IntStream.range(0, Random.SIZE)
                 .forEach(i -> {
                     JudgeStatus result = judgeBall(balls1.get(j), balls2.get(i));
-                    judge.countStrike += (result == JudgeStatus.STRIKE) ? 1 : 0;
-                    judge.countBall += (result == JudgeStatus.BALL) ? 1 : 0;
+                    this.countStrike += (result == JudgeStatus.STRIKE) ? 1 : 0;
+                    this.countBall += (result == JudgeStatus.BALL) ? 1 : 0;
                 });
     }
 

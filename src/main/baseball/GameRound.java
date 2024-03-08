@@ -38,7 +38,8 @@ public class GameRound {
         List<Integer> playerNumbers = ballsMaker.splitStr(playerInput);
         List<Ball> playerBalls = ballsMaker.integerToBall(playerNumbers);
 
-        Judge result = new Judge(0, 0).result(playerBalls, ballsMaker.integerToBall(random.generateRandom()));
+        Judge result = new Judge(0, 0);
+        result.countResult(playerBalls, ballsMaker.integerToBall(random.generateRandom()));
         gameView.judgeView(result.getCountStrike(), result.getCountBall());
 
         if (result.getCountStrike() == Random.SIZE) {

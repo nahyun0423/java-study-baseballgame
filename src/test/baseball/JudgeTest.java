@@ -16,7 +16,7 @@ public class JudgeTest {
         List<Ball> balls2 = Arrays.asList(new Ball(1, 2), new Ball(5, 6), new Ball(3, 8));
         Judge judge = new Judge();
 
-        Judge result = judge.result(balls1, balls2);
+        Judge result = judge.countResult(balls1, balls2);
 
         assertThat(result.getCountStrike()).isEqualTo(2);
         assertThat(result.getCountBall()).isEqualTo(0);
