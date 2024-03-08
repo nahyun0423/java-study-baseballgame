@@ -3,30 +3,55 @@ package baseball;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import static baseball.JudgeStatus.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class JudgeTest {
-    private Judge judge = new Judge();
-    private Ball com = new Ball(1, 2);
+    @Test
+    @DisplayName("Judge_객체_생성")
+    void Judge_객체_생성() {
+        List<Ball> balls1 = Arrays.asList(new Ball(1, 2), new Ball(2, 4), new Ball(3, 8));
+        List<Ball> balls2 = Arrays.asList(new Ball(1, 2), new Ball(5, 6), new Ball(3, 8));
+        Judge judge = new Judge();
+
+        Judge result = judge.result(balls1, balls2);
+
+        assertThat(result.getCountStrike()).isEqualTo(2);
+        assertThat(result.getCountBall()).isEqualTo(0);
+    }
 
     @Test
-    @DisplayName("Balls_비교")
-    void Balls_비교() {
-        List<Ball> balls1 = new ArrayList<>();
-        List<Ball> balls2 = new ArrayList<>();
+    void STRIKE() {
+        Ball ball1 = new Ball(1, 2);
+        Ball ball2 = new Ball(1, 2);
+        Judge judge = new Judge();
 
-        for (int i = 0; i < 3; i++) {
-            balls1.add(new Ball(i, i + 2)); // 2,3,5
-            balls2.add(new Ball(i, i + 1)); // 1,2,3
-        }
+        JudgeStatus result = judge.judgeBall(ball1, ball2);
 
-        Judge judge1 = judge.result(balls1, balls2);
+        assertThat(result).isEqualTo(JudgeStatus.STRIKE);
+    }
 
-        assertThat(judge1.getCountBall()).isEqualTo(2);
-        assertThat(judge1.getCountStrike()).isEqualTo(0);
+    @Test
+    void BALL() {
+        Ball ball1 = new Ball(1, 2);
+        Ball ball2 = new Ball(5, 2);
+        Judge judge = new Judge();
+
+        JudgeStatus result = judge.judgeBall(ball1, ball2);
+
+        assertThat(result).isEqualTo(JudgeStatus.BALL);
+    }
+
+    @Test
+    void NOTHING() {
+        Ball ball1 = new Ball(1, 2);
+        Ball ball2 = new Ball(5, 6);
+        Judge judge = new Judge();
+
+        JudgeStatus result = judge.judgeBall(ball1, ball2);
+
+        assertThat(result).isEqualTo(JudgeStatus.NOTHING);
     }
 }

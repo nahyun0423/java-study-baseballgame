@@ -7,15 +7,12 @@ public class Judge {
     private int countBall = 0;
     private int countStrike = 0;
 
-    Judge() {
-    }
-
     Judge(int countBall, int countStrike) {
         this.countBall = countBall;
         this.countStrike = countStrike;
     }
 
-    private JudgeStatus judgeBall(Ball ball1, Ball ball2) {
+    public JudgeStatus judgeBall(Ball ball1, Ball ball2) {
         if (ball1.equals(ball2)) {
             return JudgeStatus.STRIKE;
         }

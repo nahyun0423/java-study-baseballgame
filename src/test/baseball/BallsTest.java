@@ -19,8 +19,6 @@ public class BallsTest {
 
         List<Ball> list = balls.makeBallsList(ball1, ball2, ball3);
 
-        assertThat(list.get(0)).isEqualTo(ball1);
-        assertThat(list.get(1)).isEqualTo(ball2);
-        assertThat(list.get(2)).isEqualTo(ball3);
+        assertThat(list).containsExactly(ball1, ball2, ball3);
     }
 }

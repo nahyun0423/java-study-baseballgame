@@ -1,7 +1,5 @@
 package baseball;
 
-import java.util.Scanner;
-
 public class GameView {
 
     public void startView() {
@@ -15,8 +13,8 @@ public class GameView {
     public void judgeView(int countStrike, int countBall) {
         if (countStrike > 0 || countBall > 0){
             System.out.println(countStrike + " 스트라이크, " + countBall + " 볼");
+            return;
         }
-        if (countStrike == 0 && countBall == 0)
         System.out.println("낫싱");
     }
 

@@ -11,7 +11,7 @@ public class Random {
 
     public List<Integer> generateRandom() {
         while (randomSet.size() < SIZE) {
-            randomSet.add((int) (Math.random() * SIZE) + 1);
+            randomSet.add((int) (Math.random() * 9) + 1);
         }
         ArrayList<Integer> randomBall = new ArrayList<>(randomSet);
         randomSet.clear();
