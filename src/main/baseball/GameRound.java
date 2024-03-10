@@ -3,14 +3,14 @@ package baseball;
 import java.util.List;
 
 public class GameRound {
-    private BallsMaker ballsMaker;
+    private Balls playerBalls = new Balls();
+    private Balls comBalls = new Balls();
     private GameView gameView;
     private Random random;
-    private Judge judge;
+    private Judge judge = new Judge(0, 0);
     private boolean isPlay = true;
 
-    public GameRound(BallsMaker ballsMaker, GameView gameView, Random random) {
-        this.ballsMaker = ballsMaker;
+    public GameRound(GameView gameView, Random random) {
         this.gameView = gameView;
         this.random = random;
     }
@@ -27,7 +27,7 @@ public class GameRound {
         String playerInput = new InputData().getPlayerInput();
 
         try {
-            new Validation(ballsMaker).validateInput(playerInput);
+            new Validation(playerBalls).validateInput(playerInput);
             processValidInput(playerInput);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
@@ -35,11 +35,11 @@ public class GameRound {
     }
 
     private void processValidInput(String playerInput) {
-        List<Integer> playerNumbers = ballsMaker.splitStr(playerInput);
-        List<Ball> playerBalls = ballsMaker.integerToBall(playerNumbers);
+        List<Integer> playerNumbers = playerBalls.splitStr(playerInput);
+        List<Ball> playerList = playerBalls.integerToBall(playerNumbers); //integerToball이 문제
 
         Judge result = new Judge(0, 0);
-        result.countResult(playerBalls, ballsMaker.integerToBall(random.generateRandom()));
+        result.countResult(playerList, comBalls.integerToBall(random.generateRandom())); //여기서 랜덤=입력값 됨
         gameView.judgeView(result.getCountStrike(), result.getCountBall());
 
         if (result.getCountStrike() == Random.SIZE) {
@@ -53,11 +53,13 @@ public class GameRound {
     }
 
     private void endGame() {
+        Balls balls = new Balls();
         gameView.endOrRestartView();
+
         int endOrRestart = new InputData().getPlayerInputInt();
 
         try {
-            new Validation(ballsMaker).validateInputEnd(endOrRestart);
+            new Validation(balls).validateInputEnd(endOrRestart);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }

@@ -11,6 +11,6 @@ public class GameStarter {
 
     public void startGame() {
         gameView.startView();
-        new GameRound(new BallsMaker(), gameView, random).playGame();
+        new GameRound(gameView, random).playGame();
     }
 }
