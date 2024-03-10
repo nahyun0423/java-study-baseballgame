@@ -26,11 +26,11 @@ public class GameRound {
         gameView.playView();
         String playerInput = new InputData().getPlayerInput();
 
-        if (new Validation(ballsMaker).isValidInput(playerInput)) {
+        try {
+            new Validation(ballsMaker).validateInput(playerInput);
             processValidInput(playerInput);
-        }
-        if (!new Validation(ballsMaker).isValidInput(playerInput)) {
-            gameView.invalidInputView();
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -43,7 +43,8 @@ public class GameRound {
         gameView.judgeView(result.getCountStrike(), result.getCountBall());
 
         if (result.getCountStrike() == Random.SIZE) {
-            endGame(true);
+            gameView.successView();
+            endGame();
             isPlay = false;
         }
         if (result.getCountStrike() != Random.SIZE) {
@@ -51,9 +52,15 @@ public class GameRound {
         }
     }
 
-    private void endGame(boolean isPlayerWinner) {
-        gameView.endOrRestartView(isPlayerWinner);
+    private void endGame() {
+        gameView.endOrRestartView();
         int endOrRestart = new InputData().getPlayerInputInt();
+
+        try {
+            new Validation(ballsMaker).validateInputEnd(endOrRestart);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
 
         if (endOrRestart == 1) {
             isPlay = false;
@@ -62,8 +69,7 @@ public class GameRound {
             new GameStarter(gameView, random).startGame();
         }
         if (endOrRestart != 1 && endOrRestart != 2) {
-            gameView.invalidInputView();
-            endGame(isPlayerWinner);
+            endGame();
         }
     }
 }

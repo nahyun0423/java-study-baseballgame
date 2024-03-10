@@ -9,13 +9,21 @@ public class Validation {
         this.ballsMaker = ballsMaker;
     }
 
-    public boolean isValidInput(String input) {
+    public void validateInput(String input) {
         if (input.length() != Random.SIZE) {
-            return false;
+            throw new IllegalArgumentException("입력은 " + Random.SIZE + "자리여야 합니다.");
         }
 
         List<Integer> playerNumbers = ballsMaker.splitStr(input);
 
-        return playerNumbers.stream().allMatch(Ball::validNo) && !Ball.hasDuplicate(playerNumbers);
+        if (playerNumbers.stream().anyMatch(num -> !Ball.validNo(num)) || Ball.hasDuplicate(playerNumbers)) {
+            throw new IllegalArgumentException("유효하지 않은 입력입니다. 다시 입력해주세요.");
+        }
+    }
+
+    public void validateInputEnd(int input) {
+        if (input != 1 && input != 2) {
+            throw new IllegalArgumentException("유효하지 않은 입력입니다. 1과 2만 입력해주세요.");
+        }
     }
 }
