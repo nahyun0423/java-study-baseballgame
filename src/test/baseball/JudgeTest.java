@@ -14,7 +14,7 @@ public class JudgeTest {
     void Judge_객체_생성() {
         List<Ball> balls1 = Arrays.asList(new Ball(1, 2), new Ball(2, 4), new Ball(3, 8));
         List<Ball> balls2 = Arrays.asList(new Ball(1, 2), new Ball(5, 6), new Ball(3, 8));
-        Judge judge = new Judge();
+        Judge judge = new Judge(0,0);
 
         Judge result = judge.countResult(balls1, balls2);
 
@@ -26,7 +26,7 @@ public class JudgeTest {
     void STRIKE() {
         Ball ball1 = new Ball(1, 2);
         Ball ball2 = new Ball(1, 2);
-        Judge judge = new Judge();
+        Judge judge = new Judge(0,0);
 
         JudgeStatus result = judge.judgeBall(ball1, ball2);
 
@@ -37,7 +37,7 @@ public class JudgeTest {
     void BALL() {
         Ball ball1 = new Ball(1, 2);
         Ball ball2 = new Ball(5, 2);
-        Judge judge = new Judge();
+        Judge judge = new Judge(0,0);
 
         JudgeStatus result = judge.judgeBall(ball1, ball2);
 
@@ -48,7 +48,7 @@ public class JudgeTest {
     void NOTHING() {
         Ball ball1 = new Ball(1, 2);
         Ball ball2 = new Ball(5, 6);
-        Judge judge = new Judge();
+        Judge judge = new Judge(0,0);
 
         JudgeStatus result = judge.judgeBall(ball1, ball2);
 

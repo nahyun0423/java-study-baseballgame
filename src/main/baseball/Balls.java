@@ -1,13 +1,17 @@
 package baseball;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Balls {
     private List<Ball> ballsList = new ArrayList<>();
 
+    public void hasDuplicate(List<Integer> list) {
+        Set<Integer> item = new HashSet<>(list);
+        if (item.size() != list.size()) {
+            throw new IllegalArgumentException("중복된 숫자가 있습니다");
+        }
+    }
 
     public List<Integer> splitStr(String input) {
         return Arrays.stream(input.split(""))
@@ -16,6 +20,7 @@ public class Balls {
     }
 
     public List<Ball> integerToBall(List<Integer> inputList) {
+        hasDuplicate(inputList);
         return makeBallsList(
                 new Ball(1, inputList.get(0)),
                 new Ball(2, inputList.get(1)),

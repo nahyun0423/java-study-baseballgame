@@ -30,7 +30,7 @@ public class GameRound {
             new Validation(playerBalls).validateInput(playerInput);
             processValidInput(playerInput);
         } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+            throw new RuntimeException(e.getMessage());
         }
     }
 

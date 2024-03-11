@@ -1,9 +1,6 @@
 package baseball;
 
-import java.util.HashSet;
-import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 public class Ball {
     public static final int MIN_NO = 1;
@@ -16,13 +13,11 @@ public class Ball {
         this.ballNo = ballNo;
     }
 
-    public static boolean validNo(int no) {
-        return no >= MIN_NO && no <= MAX_NO;
-    }
-
-    public static boolean hasDuplicate(List<Integer> list) {
-        Set<Integer> item = new HashSet<>(list);
-        return item.size() != list.size();
+    public boolean validNo(int no) {
+        if (no >= MIN_NO && no <= MAX_NO) {
+            return true;
+        }
+        throw new IllegalArgumentException("유효하지 않은 입력입니다. 다시 입력해주세요.");
     }
 
     public int getBallNo() {

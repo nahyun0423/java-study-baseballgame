@@ -1,24 +1,63 @@
 package baseball;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class BallsTest {
-    private Balls balls = new Balls();
+class BallsTest {
 
     @Test
-    @DisplayName("Ball객체_3개로_BallsList_만들기")
-    void Ball객체_3개로_BallsList_만들기() {
-        Ball ball1 = new Ball(1,2);
-        Ball ball2 = new Ball(2,4);
-        Ball ball3 = new Ball(3,8);
+    void splitStr() {
+        Balls balls = new Balls();
+        List<Integer> result = balls.splitStr("123");
 
-        List<Ball> list = balls.makeBallsList(ball1, ball2, ball3);
+        assertEquals(Arrays.asList(1, 2, 3), result);
+    }
 
-        assertThat(list).containsExactly(ball1, ball2, ball3);
+    @Test
+    void integerToBall() {
+        Balls balls = new Balls();
+        List<Integer> inputList = Arrays.asList(1, 2, 3);
+        List<Ball> result = balls.integerToBall(inputList);
+
+        assertEquals(3, result.size());
+        assertEquals(1, result.get(0).getBallNo());
+        assertEquals(2, result.get(1).getBallNo());
+        assertEquals(3, result.get(2).getBallNo());
+    }
+
+    @Test
+    void makeBallsList() {
+        Balls balls = new Balls();
+        Ball ball1 = new Ball(1, 1);
+        Ball ball2 = new Ball(2, 2);
+        Ball ball3 = new Ball(3, 3);
+
+        List<Ball> result = balls.makeBallsList(ball1, ball2, ball3);
+
+        assertEquals(3, result.size());
+        assertEquals(1, result.get(0).getBallNo());
+        assertEquals(2, result.get(1).getBallNo());
+        assertEquals(3, result.get(2).getBallNo());
+    }
+
+    @Test
+    void hasDuplicate_validInput() {
+        Balls balls = new Balls();
+        List<Integer> inputList = Arrays.asList(1, 2, 3);
+
+        assertDoesNotThrow(() -> balls.hasDuplicate(inputList));
+    }
+
+    @Test
+    void hasDuplicate_invalidInput() {
+        Balls balls = new Balls();
+        List<Integer> inputList = Arrays.asList(1, 2, 2);
+
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> balls.hasDuplicate(inputList));
+        assertEquals("중복된 숫자가 있습니다", exception.getMessage());
     }
 }
